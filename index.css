@@ -1,0 +1,580 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+.header{
+    position: relative;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    transition: 0.3s;
+}
+.spotifylogo{
+    width: 25%;
+}
+ .spotifylogo a{
+    display:flex;
+    width: 50%;
+    color: white;
+    text-decoration: none;
+    padding:2em;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    /* transition: 0.5s; */
+}
+
+.menu li{
+    list-style-type: none;
+}
+.menu li a{
+    text-decoration: none;
+    display: block;
+    padding: 1.5em 1.5em;
+    font-size: 1em;
+    /* transition: 0.3s ease-in-out; */
+    color: white;
+}
+.menu li a:hover{
+    color: rgb(3, 219, 75);
+    transition: 0.3s;
+}
+
+
+.hamburger{
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.hamburger::before{
+    top:-10px;
+    width: 30px;
+}
+.hamburger::after{
+    top:10px;
+    width: 30px;
+}
+
+.toggle-menu{
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.hamburger,
+.toggle-menu{
+    display: none;
+}
+.navigation input:checked ~ .hamburger{
+    background: transparent;
+}
+.navigation input:checked ~ .hamburger::before{
+    top:0;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+.navigation input:checked ~ .hamburger::after{
+    top: 0;
+    transform: rotate(45deg);
+    width: 30px;
+}
+
+.navigation input:checked ~ .menu{
+    right: 0;
+}
+@media screen and (max-width:800px) {
+    .hamburger,
+    .toggle-menu{
+    display: block;
+    right: 1em;
+    }
+    
+    .menu{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        background-color: black;
+        width:100vw;
+        height: 100%;
+        /* padding-top: 65px; */
+        transition: 0.5s;
+    }
+    
+    .menu li{
+        width: 100%;
+    }
+    .menu li a,
+    .menu li a:hover {
+        padding-top: 30px;
+        font-size: 24px;
+        /* box-shadow: 0 1px 0 rgba(61, 61, 61, 0.7) inset; */
+    }
+} 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .get-premium{
+      display: flex;
+      background-color: rgb(65, 0, 245);
+      width:100%;
+      height: 77vh;
+      align-items: center;
+      position: relative;
+      z-index: 0;
+  }
+  .premium-left{
+       /* background-color: cadetblue; */
+      width: 60%;
+  }
+  .premium-left-content{
+      width: 80%;
+      height:max-content;
+      /* background-color: burlywood; */
+      display: flex;
+      flex-direction: column;
+      align-items:flex-start;
+      color: white;
+      justify-content: center;
+      gap: 2.5em;
+      padding-left: 10%;
+      padding-right: 10%;
+  }
+  
+  .premium-left-content h1{
+      font-size: 2.3em;
+  }
+  .premium-left-content p{
+      font-size: 1.4em;
+  }
+  .premium-buttons button{
+      padding:13px 50px 13px 50px;
+      border-radius: 50px;
+      font-weight: 750;
+      color:white;
+  }
+  .premium-buttons button:hover{
+      transform: scale(1.1);
+  }
+  .para{
+      font-size: 8px;
+  }
+
+  .premium-right{
+    
+    width: 40%;
+}
+.prism{
+    height:20em;
+}
+.why-premium{
+    display: flex;
+    /* position: static; */
+      z-index: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 3.5em;
+    padding-bottom: 5em;
+}
+.why-premium div h1{
+    padding-top: 2.5em;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 1000;
+}
+.options ul{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+.options ul li{
+    list-style-type: none;
+    text-align: center;
+}
+.options ul li img{
+    width:9em;
+    /* padding: 0em 5em 3em 5em;  */
+}
+.big-text{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.small-text{
+    padding-top: 1em;
+    font-size: 0.9em;
+}
+
+.premium{
+    height: 150vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    background: #F3904F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3B4371, #F3904F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.pick-premium{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4.55em 0em 2em 0em;
+    gap:1em;
+    color: white;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 2em;
+}
+.card{
+    width: 20vw; 
+    height: 110vh; 
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+    padding: 1em 1em 1em 1em;
+    background-color: white;
+    border-radius: 12px;
+    position: relative;
+}
+.card-top{
+    display: flex;
+    flex-direction: column;
+    gap:0.6em
+}
+.months-free{
+    color: white;
+    background-color: rgb(65, 0, 245);
+    font-size: 0.8em;
+    width: 7em;
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 15px;
+    font-weight: bold;
+}
+.person{
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+.charge{
+    font-size: 0.9em;
+}
+.props{
+    font-size: 0.85em;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    left: 2.5em;
+    right: 2em;
+}
+.get-started{
+    /* background-color: yellow; */
+    position: absolute;
+    height: 10em;
+    right: 0.7em;
+    left: 0.7em;
+    bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.get-started p{
+    font-size: 12px;
+    padding:5px;
+}
+.get-started button{
+    width: 13em;
+    height: 3em;
+    color: white;
+    background-color: black;
+    font-size: 1em;
+    border-radius: 25px;
+    border: none;
+}
+.get-started button:hover{
+    transform: scale(1.08);
+}
+
+.footer{
+    display: flex;
+    height: 80vh;
+    width:100%;
+    background-color: black;
+    justify-content: center;
+    align-items: baseline;
+    padding-top: 8vh;
+}
+.spotify-footer-icon{
+    width: 25%;
+}
+.spotify-footer-icon ul{
+    display: flex;
+    justify-content: center;
+}
+.spotify-footer-icon ul li{
+    color: white;
+    list-style-type: none;
+    font-size: 1.7em;
+    color: white;
+}
+.spotify-footer-icon ul li a{
+    color: white;
+    text-decoration:none;
+}
+
+.footer ul li a:hover{
+    color: rgb(4, 194, 68);
+}
+.footer ul li a i:hover{
+    cursor: pointer;
+    color: rgb(4, 194, 68);
+}
+
+.info{
+    width: 50%;
+    display: flex;
+}
+.info ul li{
+    list-style-type: none;
+    padding: 1em;
+}
+.info ul li a{
+    text-decoration: none;
+    color: white;
+}
+.socials{
+    width: 25%;
+}
+.socials a i{
+    font-size: 2em;
+    color: white;
+    padding: 0.5em;
+}
+.socials a i:hover{
+    color: rgb(3, 219, 75);
+}
+
+@media screen and (max-width: 800px) {
+    /* .spotifysupport{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        padding-right: 2em;
+        font-size: 1.5em;
+    }
+    .navlist{
+        flex-direction: column;
+    }
+    .spotifylogo{
+        padding-top: 1.3em;
+    } */
+    .get-premium{
+       /* background-color: chartreuse; */
+        display: flex;
+        height: 120vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        /* align-items: center; */
+    }
+    .premium-left{
+        width: 100%;
+    }
+    .premium-right{
+        /* background-color: chartreuse; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .prism{
+        width: 45vw;
+        height: auto;
+    }
+    .premium{
+        height: 340vh;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+}
+    .card{
+        width: 70vw;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+    }
+    .props{
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+        gap:0.7em;
+    }
+    .get-started{
+        position: absolute;
+        bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .card{
+        width: 80vw;
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .options ul{
+        /* background-color: chartreuse; */
+        display: flex;
+        flex-direction: column;
+        height: 120vh;
+        justify-content: space-evenly;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        font-size: 0.8em;
+        padding-left: 10%;
+        width: 90vw;
+    }
+    .spotifybutton{
+        padding: 2.5% 5% 2.5% 5%;
+    }
+    .spotify-footer-icon{
+        padding-top: 5%;
+        width: auto;
+        
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+    }
+    .socials{
+        display: flex;
+        margin-top: 3em;
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .options ul{
+        /* background-color: chartreuse; */
+        display: flex;
+        flex-direction: column;
+        height: 120vh;
+        justify-content: space-evenly;
+    }
+    
+}
+
+@media screen and (max-width: 400px){
+
+    .get-premium{
+        width: 100%;
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+     }
+     .premium-left{
+         width: 70vw;
+     }
+    .why-premium{
+        width:100%;
+        padding-bottom: 0;
+        padding-top: 3em;
+    }
+    .why-premium div h1{
+        padding-top: 0;
+        font-size: 2em;
+    }
+    .options ul{
+        /* background-color: chartreuse; */
+        display: flex;
+        flex-direction: column;
+        height: 120vh;
+        justify-content: space-evenly;
+    }
+    .pick-premium{
+        font-size: 0.8em;
+        text-align: center;
+    }
+    .card{
+        width: 90%;
+        height: 75vh;
+    }
+
+} 
